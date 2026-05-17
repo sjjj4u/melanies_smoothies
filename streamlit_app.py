@@ -22,8 +22,6 @@ my_dataframe = session.table("smoothies.public.fruit_options").select(
 
 pd_df = my_dataframe.to_pandas()
 
-fruit_lookup = dict(zip(fruit_df["FRUIT_NAME"], fruit_df["SEARCH_ON"]))
-
 ingredients_list = st.multiselect(
     "Choose up to 5 ingredients:",
     fruit_df["FRUIT_NAME"].tolist(),
